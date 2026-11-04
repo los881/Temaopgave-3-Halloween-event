@@ -21,7 +21,10 @@ Brugerne skal let kunne forstå eventet, finde tid og sted, få praktiske oplysn
 
 ## Teknologier og struktur
 
-- Brug kun HTML5 og CSS3. Brug ikke JavaScript, frameworks, biblioteker, CDN'er eller eksterne ressourcer uden udtrykkelig tilladelse.
+- Brug primært HTML5 og CSS3.
+- Minimal vanilla JavaScript er kun tilladt, hvis det er nødvendigt for en tilgængelig burgermenu.
+- Eventuel JavaScript skal placeres i `assets/`.
+- Brug ingen frameworks, biblioteker, CDN'er eller andre eksterne ressourcer.
 - Placér HTML-filer i projektets rodmappe og CSS, billeder samt øvrige ressourcer i `assets/`.
 - Bevar eksisterende filnavne, mappestruktur, links og funktionalitet.
 - Opret ikke ekstra HTML-sider. Nødvendige CSS- eller billedressourcer i `assets/` er tilladt, men undgå unødvendige filer.
@@ -49,8 +52,10 @@ PNG-billedet `Nosferatu skygge 1` skal på forsiden animeres med CSS alene:
 
 ## Billetbestilling og manglende oplysninger
 
-- Bevar eksisterende billetlinks, formularer og funktionalitet.
-- Opret ikke billetlinks, priser, betalingsløsninger, backend eller falsk betalingsproces.
+- Billetbestillingen er en statisk demonstration.
+- Bevar eksisterende billetlinks, formularer og funktionalitet, medmindre de strider mod reglerne her.
+- Det fiktive SMS-nummer fra Figma skal erstattes med `XXXXXXX` og tydeligt markeres som fiktivt.
+- Implementér ingen fungerende SMS-bestilling, betalingsfunktion eller backend.
 - Bevar eksisterende oplysninger. Opfind aldrig datoer, adresser, priser, links eller andet indhold.
 - Hvis en central oplysning eller funktion mangler, skal du stoppe den berørte del og spørge om afklaring. Fortsæt gerne med sikre, uafhængige forbedringer.
 - Brug kun placeholders, hvis de allerede findes i projektet. Gør mangler tydelige i afslutningen.
