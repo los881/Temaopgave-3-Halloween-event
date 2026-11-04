@@ -1,6 +1,17 @@
 (function () {
+    var animationImage = document.querySelector('.animation-layer img');
     var button = document.querySelector('.menu-toggle');
     var menu = document.getElementById('mobile-menu');
+
+    if (animationImage && !document.documentElement.classList.contains('home-animation-seen')) {
+        animationImage.addEventListener('animationend', function () {
+            try {
+                sessionStorage.setItem('halloween-home-animation-seen', '1');
+            } catch (error) {
+                // Animationen kan stadig fungere uden sessionStorage.
+            }
+        }, { once: true });
+    }
 
     if (!button || !menu) return;
 
