@@ -92,6 +92,6 @@
 
 @media(max-width:760px){
     .home-page .home-cta{display:inline-flex;position:absolute;z-index:4;bottom:20px;left:50%;transform:translateX(-50%)}
-    .home-page .animation-layer img{bottom:110px}
+    .home-page .animation-layer img{bottom:40px}
 }
 
