@@ -53,6 +53,18 @@
 .home-page .cta:hover{background:var(--gold);color:var(--ink)}
 @media(max-width:760px){.home-page .home-copy{left:auto}}
 
+/* Responsiv desktop-Forside: undgå faste positioner på brede skærme */
+@media(min-width:761px){
+    .home-page .home-hero{width:100%;overflow:hidden}
+    .home-page .home-image{width:100%;max-width:none;height:calc(100% - 6px);object-fit:cover;object-position:center top}
+    .home-page .home-copy{left:clamp(24px,8.33vw,190px);width:min(843px,calc(100% - 48px));top:clamp(180px,19vh,255px)}
+    .home-page .home-copy h1{font-size:clamp(42px,4.45vw,64px)}
+    .home-page .home-copy .lead{font-size:clamp(32px,3.6vw,52px)}
+    .home-page .home-copy .event-time{font-size:clamp(24px,2.5vw,36px)}
+    .home-page .home-copy .event-description p{font-size:clamp(22px,2.22vw,32px)}
+    .home-page .home-cta{left:clamp(24px,16.1vw,502px);bottom:clamp(24px,3.15vh,42px)}
+}
+
 /* Om filmen: Figma Desktop - OM FILMEN (1:88) */
 .film-page-body .film-page{position:relative;display:block;height:971px;min-height:971px;overflow:hidden}
 .film-heading{position:absolute;top:26px;left:104px;padding:10px}
