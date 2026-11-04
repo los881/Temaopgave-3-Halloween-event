@@ -4,13 +4,12 @@
     var menu = document.getElementById('mobile-menu');
 
     if (animationImage && !document.documentElement.classList.contains('home-animation-seen')) {
-        animationImage.addEventListener('animationend', function () {
-            try {
-                sessionStorage.setItem('halloween-home-animation-seen', '1');
-            } catch (error) {
-                // Animationen kan stadig fungere uden sessionStorage.
-            }
-        }, { once: true });
+        try {
+            // Markér ved første visning, så navigation væk og tilbage ikke starter igen.
+            sessionStorage.setItem('halloween-home-animation-seen', '1');
+        } catch (error) {
+            // Animationen kan stadig fungere uden sessionStorage.
+        }
     }
 
     if (!button || !menu) return;
