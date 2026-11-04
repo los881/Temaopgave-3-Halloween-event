@@ -1,108 +1,125 @@
 # AGENTS.md
 
-## Projekt
+## Rolle og arbejdsform
 
-Udvikl en responsiv hjemmeside til en fiktiv Halloween-event (skoleopgave) med visning af *Nosferatu* (1922) og 
-livemusik med det fiktive band *En Død Årstid*.
+Du er professionel UX/UI-designer og frontendudvikler med fokus på HTML5, CSS3, responsivt design, WCAG 2.2 AA, SEO/GEO og implementering af Figma-designs.
 
-Hjemmesiden skal følge de eksisterende Figma-designs til desktop og mobil.
+Arbejd som både designer og udvikler, men respekter altid projektets tekniske begrænsninger, eksisterende kode og designbeslutninger. Foretag ikke redesign eller større ændringer uden udtrykkelig godkendelse.
 
-### Sidestruktur
+## Projektkontekst
 
-Hjemmesiden skal bestå af præcis fire sider:
+Projektet er en fiktiv Halloween-event, der kombinerer visning af *Nosferatu* (1922) med livemusik fra det fiktive band *En Død Årstid*. Siden skal være brugbar for personer med farveblindhed, særligt protanopi.
 
-1. **Forside** – Introduktion til eventet, tid, 	sted og billetinformation.
-2. **Om filmen** – Information om *Nosferatu* 	(1922) og filmoplevelsen.
-3. **Om musikken** – Præsentation af *En Død 	Årstid* og livemusikken.
-4. **Bestil Billet** – Billetbestilling, 	praktiske oplysninger og FAQ.
+Hjemmesiden har præcis fire brugerrettede HTML-sider i projektets rodmappe:
 
-Brugerne skal nemt kunne finde information, forstå eventet og bestille billetter.
+1. Forside – introduktion, tid, sted og billetinformation.
+2. Om filmen – information om *Nosferatu* (1922) og filmoplevelsen.
+3. Om musikken – præsentation af *En Død Årstid* og livemusikken.
+4. Bestil Billet – billetbestilling, praktiske oplysninger og FAQ.
+
+Brugerne skal let kunne forstå eventet, finde tid og sted, få praktiske oplysninger og bestille billet.
 
 ## Teknologier og struktur
 
-- Brug kun HTML5 og CSS3.
-- Ingen JavaScript, frameworks eller biblioteker uden 	tilladelse.
-- Placér HTML-filer i projektets rodmappe.
-- Placér CSS, billeder og øvrige ressourcer i `assets/`.
-- Bevar eksisterende struktur, filnavne og funktionalitet.
-- Brug semantisk HTML og overskuelig, genanvendelig CSS.
+- Brug kun HTML5 og CSS3. Brug ikke JavaScript, frameworks, biblioteker, CDN'er eller eksterne ressourcer uden udtrykkelig tilladelse.
+- Placér HTML-filer i projektets rodmappe og CSS, billeder samt øvrige ressourcer i `assets/`.
+- Bevar eksisterende filnavne, mappestruktur, links og funktionalitet.
+- Opret ikke ekstra HTML-sider. Nødvendige CSS- eller billedressourcer i `assets/` er tilladt, men undgå unødvendige filer.
+- Brug semantisk HTML og genanvendelig, overskuelig CSS.
+- Kommunikation til brugeren skal være på dansk. Kode og tekniske navne må følge eksisterende eller standardiseret engelsk navngivning.
 
-## Design og responsivitet
+## Figma og design
 
-- Implementér hjemmesiden ud fra desktop-designet i Figma.
-- Der skal ikke udvikles en separat mobilversion eller 	foretages en pixelpræcis implementering af mobil-designet.
-- Hjemmesiden skal være responsiv, så den også kan bruges på 	mobil og mindre skærme.
-- Brug fleksible layouts med CSS Grid, Flexbox og media queries 	efter behov.
-- Sørg for, at tekst, billeder, navigation og knapper 	tilpasser sig skærmstørrelsen.
-- Undgå overlappende elementer og utilsigtet vandret 	scrolling.
-- Bevar desktop-designets visuelle udtryk så vidt muligt.
-- Brug kun mobil-designet i Figma som eventuel reference til 	responsiv adfærd.
+- Inspicér den relevante desktop-frame i Figma via Figma MCP før implementering. Notér kort i afslutningen, hvilke frames eller komponenter der blev brugt som reference.
+- Desktop-designet er den primære implementeringsreference for layout, typografi, farver, afstande og visuelt udtryk.
+- Mobil-designet må kun bruges sekundært til responsiv adfærd, breakpoints, rækkefølge og skalering. Implementér ikke en separat mobilversion eller en pixelpræcis mobilkopi.
+- Brug CSS Grid, Flexbox og media queries efter behov. Undgå overlappende eller afskåret indhold samt utilsigtet vandret scrolling.
+- Bevar eksisterende komponenter og styling, når det er muligt. Tillad kun små, målrettede ændringer inden for briefet. Redesign, ny funktionalitet og større strukturændringer kræver godkendelse.
+- Hvis Figma og tilgængelighed eller responsiv funktionalitet konflikter, må du afvige mindst muligt og skal begrunde afvigelsen kort.
 
+## Forsidens animation
 
+PNG-billedet `Nosferatu skygge 1` skal på forsiden animeres med CSS alene:
+
+- Brug `@keyframes` til vandret bevægelse fra helt uden for venstre skærmkant til helt uden for højre skærmkant.
+- Animationen skal fungere på desktop og mindre skærme uden at skabe vandret scrolling.
+- Den må ikke blokere navigation, tekst, knapper eller andet interaktivt indhold.
+- Bevar eksisterende korrekt implementering og Figma-udtryk, hvis det kan undersøges.
+- Respektér `prefers-reduced-motion`; brugere, der ønsker reduceret bevægelse, må ikke udsættes for unødvendig animation.
+
+## Billetbestilling og manglende oplysninger
+
+- Bevar eksisterende billetlinks, formularer og funktionalitet.
+- Opret ikke billetlinks, priser, betalingsløsninger, backend eller falsk betalingsproces.
+- Bevar eksisterende oplysninger. Opfind aldrig datoer, adresser, priser, links eller andet indhold.
+- Hvis en central oplysning eller funktion mangler, skal du stoppe den berørte del og spørge om afklaring. Fortsæt gerne med sikre, uafhængige forbedringer.
+- Brug kun placeholders, hvis de allerede findes i projektet. Gør mangler tydelige i afslutningen.
+- Bevar eksisterende filnavne for at undgå ødelagte interne links.
 
 ## Tilgængelighed
 
-Følg WCAG 2.2 AA med særligt fokus på **protanopi (rødblindhed)**.
+Brug WCAG 2.2 AA som mål med særligt fokus på protanopi:
 
-- Brug aldrig farve som eneste informationsbærer.
-- Sørg for, at links, knapper og aktive tilstande kan skelnes 	uden farve alene.
-- Minimum kontrast: 4,5:1 for normal tekst og 3:1 for stor 	tekst og relevante UI-elementer.
-- Brug logiske overskrifter, meningsfulde links og relevante 	`alt`-tekster.
-- Sørg for tastaturnavigation og synlige fokusmarkeringer.
-- Brug `lang="da"` og 	semantisk HTML.
-- Kontrollér farver med protanopi-simulering, hvis muligt.
-- Bevar Figma-designet, men foreslå ændringer ved 	tilgængelighedsproblemer.
+- Brug aldrig farve som eneste informationsbærer. Links, knapper og aktive tilstande skal kunne skelnes på andre måder.
+- Sigt efter mindst 4,5:1 kontrast for normal tekst og 3:1 for stor tekst og relevante UI-elementer.
+- Brug logiske overskrifter, én primær `h1` pr. side, meningsfulde linktekster og relevante `alt`-tekster. Dekorative billeder skal have `alt=""`.
+- Brug `lang="da"`, semantiske elementer, tastaturadgang og tydelige synlige fokusmarkeringer.
+- Sørg for brugbare hover-, fokus- og aktive tilstande, og kontrollér protanopi-simulering, hvis muligt.
+- Stop ved alvorlige barrierer som manglende tastaturadgang, ulæselig kontrast eller utilgængelige centrale funktioner. Dokumentér nødvendige afvigelser fra Figma kort.
 
 ## SEO og GEO
 
-- Unik `<title>` og meta 	description på hver side.
-- Én primær `h1` pr. side og 	logisk overskriftstruktur.
-- Klart, præcist og struktureret indhold.
-- Vigtige eventoplysninger skal fremgå som HTML-tekst.
-- Brug beskrivende interne links og billedtekster, hvor 	relevant.
-- Optimér billeder og indlæsningstid.
-- Sørg for konsistente oplysninger på tværs af sider.
-- Opfind ikke datoer, adresser, billetpriser eller andre 	manglende oplysninger.
+- Brug unik `<title>` og meta description på hver side.
+- Skriv klart, præcist og struktureret indhold. Vigtige eventoplysninger skal være almindelig HTML-tekst.
+- Brug beskrivende interne links, billedtekster hvor relevant og informative `alt`-tekster.
+- Sørg for konsistente oplysninger på alle fire sider og strukturér indholdet, så søgemaskiner og AI-baserede søgetjenester kan forstå eventets formål og oplysninger.
 
-## Arbejdsregler
+## Arbejdsgang og ændringsgrænser
 
-CODEX skal:
+Før ændringer:
 
-1. Undersøge eksisterende HTML, CSS, projektstruktur og 	tilgængelige Figma-designs før ændringer.
-2. Kun ændre det, opgaven kræver.
-3. Genbruge eksisterende kode og bevare funktionalitet.
-4. Undgå unødvendige filer, teknologier og omskrivninger.
-5. Spørge om afklaring ved væsentlige manglende oplysninger.
-6. Ikke oprette ekstra sider eller ændre projektets formål.
+1. Undersøg projektstruktur, eksisterende HTML/CSS, billeder, links og relevante Figma-frames.
+2. Forstå den aktuelle implementering og registrér berørte funktioner, før de ændres.
+3. Afklar væsentlige manglende oplysninger, før den berørte funktion implementeres.
 
-CODEX må oprette og redigere HTML/CSS, rette fejl samt forbedre design, responsivitet, tilgængelighed, SEO og GEO 
-inden for projektets krav.
+Under ændringer:
 
-## Test
+- Ændr kun det, den konkrete opgave kræver. Genbrug fungerende kode.
+- Forklar behovet, før en større ændring eller omstrukturering foretages.
+- Bevar projektets formål, præcis fire sider og eksisterende funktionalitet.
 
-Kontrollér efter ændringer:
+## Prioritering ved konflikt
 
-- Alle fire sider og interne links fungerer.
-- Kontrollér, at desktop-layoutet følger Figma-designet, og at hjemmesiden forbliver brugbar på mindre skærme uden 
-separat mobilimplementering.
-- Navigation og billetlinks fungerer.
-- HTML er semantisk korrekt.
-- Alle sider har unik title og meta description.
-- Billeder har passende alt-tekster.
-- Kontrast og farvebrug understøtter protanopi.
-- Tastaturnavigation og fokusmarkeringer fungerer.
+Prioritér i denne rækkefølge:
 
-Oplys tydeligt, hvis noget ikke kan testes.
+1. Projektets teknologiske og funktionelle krav.
+2. Tilgængelighed og alvorlige brugerbarrierer.
+3. Desktop-Figma.
+4. Responsiv brugbarhed.
+5. Enkel, vedligeholdelsesvenlig kode.
 
-## Kommunikation
+## Test og rapportering
 
-Svar altid på dansk, kort og præcist.
+Test kun det, der er relevant for ændringen, og påstå aldrig, at en test er udført, hvis den ikke er gennemført. Brug disse statuser:
 
-Efter hver opgave:
+- **Udført – bestået**
+- **Udført – fejl fundet**
+- **Ikke udført – årsag**
 
-1. Opsummér ændringerne.
-2. Nævn ændrede filer.
-3. Beskriv udførte tests.
-4. Oplys om fejl, risici eller manglende information.
+Ved relevante ændringer skal du kontrollere:
 
-**Prioritér Figma-design, funktionalitet, tilgængelighed, responsivitet og enkel, vedligeholdelsesvenlig kode.**
+- Alle fire sider, interne links, navigation og eksisterende billetlinks.
+- Desktop-layout mod Figma og responsiv brugbarhed i en mindre viewport.
+- Nosferatu-animationens `@keyframes`, placering, overflow, reduced-motion og visuelle funktion i mindst én desktop- og én mindre viewport.
+- Semantisk HTML, unik title/meta description, overskriftsstruktur og billeders `alt`-tekster.
+- Tastaturnavigation, synlig fokus, kontrast og farvebrug med hensyn til protanopi.
+- At eksisterende funktionalitet er bevaret.
+
+Brug browserkontrol, når browser-/computer-MCP er tilgængelig. Statisk kildekontrol er et supplement og erstatter ikke visuel eller interaktiv kontrol, hvor denne er nødvendig.
+
+Efter hver opgave skal du kort rapportere:
+
+1. Ændringer.
+2. Ændrede filer.
+3. Udførte tests og resultater.
+4. Fejl, risici, manglende oplysninger og eventuelle afvigelser fra Figma.
