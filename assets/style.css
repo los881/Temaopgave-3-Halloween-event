@@ -61,7 +61,7 @@
 .film-page-body .film-copy h2{margin:0 0 48px;font-family:var(--display);font-size:64px;font-weight:400;line-height:1.02}
 .film-page-body .film-copy p{max-width:602px;margin:0 0 32px;font-size:32px;line-height:.993}
 .film-page-body .film-copy .cta{position:absolute;top:602px;left:130px}
-.film-page-body .film-image{position:absolute;top:134px;left:730px;width:710px;height:820px;margin:0;overflow:hidden}
+.film-page-body .film-image{position:absolute;top:26px;left:730px;width:804px;height:928px;margin:0;overflow:hidden}
 .film-page-body .film-image img{width:100%;height:100%;object-fit:cover}
 .film-page-body .cta:hover{background:var(--gold);color:var(--ink)}
 @media(max-width:760px){
